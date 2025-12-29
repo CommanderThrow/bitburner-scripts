@@ -21,5 +21,7 @@ export async function main(ns:NS):Promise<void> {
     ns.scp(script, targetServer, "home");
     
     ns.tprint(`Launching ${script} script on ${threads} threads at ${targetServer}`);
+
+    await ns.sleep(ns.getWeakenTime(targetServer))
     ns.exec(script, targetServer, threads, scriptArgs);
 }

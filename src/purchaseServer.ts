@@ -1,7 +1,7 @@
 import { NS } from "@ns";
 
 export async function main(ns:NS):Promise<void> {
-    var ram = 8;
+    var ram = 64;
     var i = 0;
 
     while (i < ns.getPurchasedServerLimit()) {
