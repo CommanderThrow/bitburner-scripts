@@ -3,7 +3,7 @@ import { NS } from "@ns";
 export async function main(ns:NS):Promise<void> {
     const targetServer = ns.args[0].toString();
     while (true) {
-        while (ns.getServerSecurityLevel(targetServer) != 1) {
+        while (ns.getServerSecurityLevel(targetServer) != ns.getServerMinSecurityLevel(targetServer)) {
             await ns.weaken(targetServer)
         }
         
