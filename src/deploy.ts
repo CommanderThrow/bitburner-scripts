@@ -22,6 +22,7 @@ export async function main(ns:NS):Promise<void> {
     
     ns.tprint(`Launching ${script} script on ${threads} threads at ${targetServer}`);
 
-    await ns.sleep(ns.getWeakenTime(targetServer))
     ns.exec(script, targetServer, threads, scriptArgs);
+
+    ns.tprint(`Script deployed successfully on ${targetServer}`)
 }
